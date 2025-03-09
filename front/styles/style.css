@@ -66,6 +66,7 @@ main{
     margin: 5px 0;
 }
 
+/* Pre-styling for the non-existing footer */
 footer{
     text-align: center;
     padding: 10px;
