@@ -8,7 +8,7 @@ tempData.forEach((movie) => {
     card.classList.add("card");
     card.innerHTML = `
         <img src="${movie.poster}" alt="${movie.title} Poster">
-        <h2>${movie.title}</h2>
+        <a href="."><h2>${movie.title}</h2></a>
         <p>Year: ${movie.year}</p>
         <p>Director: ${movie.director}</p>
         <p>Duration: ${movie.duration}</p>
