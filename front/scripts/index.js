@@ -7,15 +7,17 @@ const cardContainer = document.querySelector("#card-container");
 const renderCards = (data) => {
     data.forEach((movie) => {
         const card = document.createElement("div");
-        card.classList.add("card");
+        card.classList.add("card", "mb-3", "col-sm-6");
         card.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title} Poster">
-            <a href="."><h2>${movie.title}</h2></a>
-            <p>Year: ${movie.year}</p>
-            <p>Director: ${movie.director}</p>
-            <p>Duration: ${movie.duration}</p>
-            <p>Genre: ${movie.genre.join(", ")}</p>
-            <p>Rate: ${movie.rate}</p>
+            <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
+            <div class="card-body">
+                <a href="#"><h5 class="card-title">${movie.title}</h5></a>
+                <p class="card-text">Year: ${movie.year}<br>
+                Director: ${movie.director}<br>
+                Duration: ${movie.duration}<br>
+                Genre: ${movie.genre.join(", ")}<br>
+                Rate: ${movie.rate}</p>
+            </div>
         `;
         cardContainer.appendChild(card);
     });
