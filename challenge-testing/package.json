@@ -1,0 +1,17 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "Jest testing challenge",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Luis Vargas",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
