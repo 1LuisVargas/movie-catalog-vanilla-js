@@ -1,11 +1,5 @@
 const ShoppingCart = require("../index.js");
 
-// La clase debe tener los siguientes métodos:
-// constructor(): Inicializa el carrito como un array vacío.
-// agregarProducto(producto): Recibe un objeto representando un producto y lo agrega al carrito.
-// calcularTotal(): Calcula el total de la compra sumando los precios de todos los productos en el carrito.
-// aplicarDescuento(porcentaje): Aplica un descuento al total de la compra según el porcentaje especificado.
-
 // Testing ShoppingCart class
 describe("Testing the entire shopping cart class", () => {
     // Test constructor
@@ -23,6 +17,16 @@ describe("Testing the entire shopping cart class", () => {
         expect(cart.items.length).toBe(3);
     });
 
+    // Testing if addProduct throws an error
+    test("Testing that it throws an error if the product is invalid", () => {
+        const cart = new ShoppingCart();
+        expect(() => cart.addProduct()).toThrow("Invalid product");
+        expect(() => cart.addProduct({ name: "Product 1", price: 10 })).toThrow("Invalid product");
+        expect(() => cart.addProduct({ name: "Product 1", price: 10 , quantity: -1})).toThrow("Invalid product");
+        expect(() => cart.addProduct({ name: "Product 1", price: "10" , quantity: 1})).toThrow("Invalid product");
+        expect(() => cart.addProduct({ name: "Product 1", price: 10 , quantity: 1})).not.toThrow("Invalid product");
+    });
+
     // Test calculateTotal
     test("Testing that it can successfully calculate the total", () => {
         const cart = new ShoppingCart();
@@ -38,5 +42,14 @@ describe("Testing the entire shopping cart class", () => {
         cart.addProduct({ name: "Product 2", price: 20, quantity: 1 });
         cart.applyDiscount(0.5);
         expect(cart.calculateTotal()).toBe(20);
+    });
+
+    // Testing if applyDiscount throws an error
+    test("Testing that it throws an error if the discount is invalid", () => {
+        const cart = new ShoppingCart();
+        expect(() => cart.applyDiscount()).toThrow("The discount must be between 0 and 1");
+        expect(() => cart.applyDiscount(-1)).toThrow("The discount must be between 0 and 1");
+        expect(() => cart.applyDiscount(2)).toThrow("The discount must be between 0 and 1");
+        expect(() => cart.applyDiscount(0.5)).not.toThrow("The discount must be between 0 and 1");
     });
 });
