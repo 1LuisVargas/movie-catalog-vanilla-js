@@ -1,6 +1,6 @@
 // Importing express and the controller for movies
 const express = require("express");
-const moviesController = require("../controllers/movies");
+const moviesController = require("../controllers/moviesController");
 
 // Creating the router
 const router = express.Router();
