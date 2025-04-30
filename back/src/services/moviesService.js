@@ -8,4 +8,10 @@ module.exports = {
     const movies = await Movie.find();
     return movies;
   },
+
+  // Function to add a movie to the database
+  addMovie: async (req, res) => {
+    const movie = await Movie.create(req.body);
+    return movie;
+  },
 };
