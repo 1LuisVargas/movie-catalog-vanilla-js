@@ -1,7 +1,7 @@
 const renderCards = require("./renderCards");
 const axios = require("axios");
 
-axios.get('https://students-api.up.railway.app/movies')
+axios.get('http://localhost:3000/movies')
     .then((response) => {
         renderCards(response.data);
     })
