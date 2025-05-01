@@ -1,39 +1,46 @@
-// Clear button
-const clearButton = document.getElementById("clear-button");
+const axios = require("axios");
 
-clearButton.addEventListener("click", () => {
-    const titleInput = document.getElementById("title");
-    const yearInput = document.getElementById("year");
-    const directorInput = document.getElementById("director");
-    const durationInput = document.getElementById("duration");
-    const genreInput = document.getElementById("genre");
-    const rateInput = document.getElementById("rate");
-    titleInput.value = "";
-    yearInput.value = "";
-    directorInput.value = "";
-    durationInput.value = "";
-    genreInput.value = "";
-    rateInput.value = "";
-});
-
-// Add movie form
-const addForm = document.getElementById("add-form");
-
-addForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    // Get form data
-    const titleInput = document.getElementById("title");
-    const yearInput = document.getElementById("year");
-    const directorInput = document.getElementById("director");
-    const durationInput = document.getElementById("duration");
-    const genreInputs = document.querySelectorAll('input[name="genre"]:checked');
-    const genres = Array.from(genreInputs).map(input => input.value);    
-    const rateInput = document.getElementById("rate");
-    const posterInput = document.getElementById("poster");
-
-    // Create movie object
-    const movie = {
+// Ensuring that the DOM is loaded before executing the code. This is necessary for the "require("./add");" not to break the entire bundle in index.js
+document.addEventListener("DOMContentLoaded", () => {
+    // Clear button
+    const clearButton = document.getElementById("clear-button");
+  
+    clearButton.addEventListener("click", () => {
+      // Get form inputs
+      const titleInput = document.getElementById("title");
+      const yearInput = document.getElementById("year");
+      const directorInput = document.getElementById("director");
+      const durationInput = document.getElementById("duration");
+      const genreInputs = document.querySelectorAll('input[name="genre"]');
+      const rateInput = document.getElementById("rate");
+      // Clear form inputs
+      titleInput.value = "";
+      yearInput.value = "";
+      directorInput.value = "";
+      durationInput.value = "";
+      genreInputs.forEach(input => input.checked = false);
+      rateInput.value = "";
+    });
+  
+    // Add movie form
+    const addForm = document.getElementById("add-form");
+  
+    addForm.addEventListener("submit", async (event) => {
+      // Prevent form submission
+      event.preventDefault();
+  
+      // Get form data
+      const titleInput = document.getElementById("title");
+      const yearInput = document.getElementById("year");
+      const directorInput = document.getElementById("director");
+      const durationInput = document.getElementById("duration");
+      const genreInputs = document.querySelectorAll('input[name="genre"]:checked');
+      const genres = Array.from(genreInputs).map((input) => input.value);
+      const rateInput = document.getElementById("rate");
+      const posterInput = document.getElementById("poster");
+  
+      // Create movie object
+      const movie = {
         title: titleInput.value,
         year: yearInput.value,
         director: directorInput.value,
@@ -41,33 +48,28 @@ addForm.addEventListener("submit", async (event) => {
         genre: genres,
         rate: rateInput.value,
         poster: posterInput.value,
-    };
-
-    // Send POST request
-    try {
-        const response = await fetch("http://localhost:3000/movies", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(movie),
+      };
+  
+      // Send POST request
+      try {
+        const response = await axios.post("http://localhost:3000/movies", movie, {
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
-
         // Handle response
-        if (response.ok) {
-            const data = await response.json();
-            console.log("Movie added:", data);
-            titleInput.value = "";
-            yearInput.value = "";
-            directorInput.value = "";
-            durationInput.value = "";
-            genreInputs.value = "";
-            rateInput.value = "";
-            posterInput.value = "";
-        } else {
-            console.error("Error adding movie:", response.statusText);
-        }
-    } catch (error) {
+        console.log("Movie added:", response.data);
+        titleInput.value = "";
+        yearInput.value = "";
+        directorInput.value = "";
+        durationInput.value = "";
+        genreInputs.forEach((input) => (input.checked = false)); // reset checkboxes
+        rateInput.value = "";
+        posterInput.value = "";
+      } catch (error) {
+        // Handle error
         console.error("Error adding movie:", error);
-    }
-});
+      }
+    });
+  });
+  
