@@ -1,9 +1,16 @@
+// Selecting the card container
 const cardContainer = document.querySelector("#card-container");
 
+// Function to render cards
 const renderCards = (data) => {
     data.forEach((movie) => {
+        // Creating the column div with bootstrap classes for better viewing
+        const col = document.createElement("div");
+        col.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
+
+        // Creating the card with bootstrap classes
         const card = document.createElement("div");
-        card.classList.add("card", "mb-3", "col-sm-6");
+        card.classList.add("card");
         card.innerHTML = `
             <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
             <div class="card-body">
@@ -15,7 +22,10 @@ const renderCards = (data) => {
                 Rate: ${movie.rate}</p>
             </div>
         `;
-        cardContainer.appendChild(card);
+        // Appending the card to the column div
+        col.appendChild(card);
+        // Appending the column div to the card container
+        cardContainer.appendChild(col);
     });
 }
 
