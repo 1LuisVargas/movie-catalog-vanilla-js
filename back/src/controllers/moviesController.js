@@ -1,24 +1,20 @@
-// Importing the service for movies
+// Importing the service for movies and the error catcher
 const moviesService = require("../services/moviesService");
+const catchAsyncError = require("../utils/errorCatcher");
 
-// Exporting the controllers for movies
+// Creating the controller for movies
+const getMovies = async (req, res) => {
+    const movies = await moviesService.getMovies(req, res);
+    res.status(200).json(movies);
+  };
+
+const addMovie = async (req, res) => {
+    const movie = await moviesService.addMovie(req, res);
+    res.status(201).json(movie);
+  };
+
+// Exporting the controllers for movies after passing them through the error catcher
 module.exports = {
-  // Creating the controller for movies requests
-  getMovies: async (req, res) => {
-    try {
-      const movies = await moviesService.getMovies(req, res);
-      res.status(200).json(movies);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  },
-
-  addMovie: async (req, res) => {
-    try {
-      const movie = await moviesService.addMovie(req, res);
-      res.status(201).json(movie);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  },
+    getMovies: catchAsyncError(getMovies),
+    addMovie: catchAsyncError(addMovie),
 };
