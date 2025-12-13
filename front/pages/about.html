@@ -1,57 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Adding jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Adding CSS styles -->
     <link rel="stylesheet" href="../styles/reset.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../styles/style.css" />
-    
-    <title>About Me</title>
-</head>
-<body>
 
+    <title>About • Movies Project</title>
+  </head>
+
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Movies Project</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">About this Project</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./add.html">Add Movie</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="../index.html"
+            >Movies Project</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" aria-current="page"
+                  >About this Project</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./add.html">Add Movie</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
-    
-    <h1 class="text-center my-4">About this Project</h1>
-    
-    <main>
-        <p>
-            This project was created with the goal of learning about HTML, CSS, and JavaScript.
-        </p>
+
+    <main class="container py-4">
+      <!-- HERO -->
+      <section class="row align-items-center g-4 mb-4">
+        <div class="col-12 col-lg-7">
+          <h1 class="display-6 fw-bold mb-2">About this project</h1>
+          <p class="lead mb-3">
+            <strong>Movies Project</strong> is a Movie Catalog app built to
+            practice real-world
+            <strong>Vanilla JavaScript</strong> fundamentals: DOM manipulation,
+            event handling, and dynamic UI updates — styled with Bootstrap for
+            clean, responsive layouts.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="../index.html">Open the catalog</a>
+            <a class="btn btn-outline-secondary" href="./add.html"
+              >Add a movie</a
+            >
+            <a
+              class="btn btn-outline-dark"
+              href="https://github.com/1LuisVargas/movie-catalog-vanilla-js"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View repository
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 class="h5 fw-bold mb-3">Quick facts</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Stack</span>
+                  <span class="fw-semibold">HTML • CSS • JS</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">UI</span>
+                  <span class="fw-semibold">Bootstrap 5</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Main focus</span>
+                  <span class="fw-semibold">DOM + Events</span>
+                </li>
+                <li class="list-group-item px-0 d-flex justify-content-between">
+                  <span class="text-muted">Goal</span>
+                  <span class="fw-semibold">JS fundamentals</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="mb-4">
+        <h2 class="h4 fw-bold mb-3">What you can do</h2>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h6 fw-bold">Browse movies</h3>
+                <p class="mb-0 text-muted">
+                  Explore movies displayed as responsive cards.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h6 fw-bold">Add new titles</h3>
+                <p class="mb-0 text-muted">
+                  Use the form to create new movies quickly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h6 fw-bold">Update the UI instantly</h3>
+                <p class="mb-0 text-muted">
+                  Changes reflect immediately without reloading.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="h6 fw-bold">Responsive layout</h3>
+                <p class="mb-0 text-muted">
+                  Works well on desktop, tablet, and mobile.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT'S BUILT -->
+      <section class="row g-3 mb-4">
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h2 class="h4 fw-bold mb-3">How it’s built</h2>
+              <ul class="mb-0">
+                <li>
+                  <strong>Vanilla JavaScript:</strong> rendering cards, handling
+                  events, updating the view.
+                </li>
+                <li>
+                  <strong>Bootstrap:</strong> grid system + components for
+                  consistent UI.
+                </li>
+                <li>
+                  <strong>Clean structure:</strong> separating pages (Home,
+                  About, Contact, Add Movie).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h2 class="h4 fw-bold mb-3">What I practiced</h2>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge text-bg-secondary">DOM manipulation</span>
+                <span class="badge text-bg-secondary">Event handling</span>
+                <span class="badge text-bg-secondary">Form UX</span>
+                <span class="badge text-bg-secondary">Dynamic rendering</span>
+                <span class="badge text-bg-secondary">Responsive design</span>
+                <span class="badge text-bg-secondary">Code organization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="pt-3 mt-4 border-top text-muted small">
+        <div class="d-flex flex-wrap justify-content-between gap-2">
+          <span>© <span id="year"></span> Movies Project</span>
+          <span>
+            Built by <strong>Luis Vargas</strong> •
+            <a
+              href="https://github.com/1LuisVargas"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+          </span>
+        </div>
+      </footer>
     </main>
-    
-    <!-- Adding Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tiny JS for footer year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

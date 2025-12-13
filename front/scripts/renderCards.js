@@ -14,7 +14,7 @@ const renderCards = (data) => {
         card.innerHTML = `
             <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster">
             <div class="card-body">
-                <a href="#"><h5 class="card-title">${movie.title}</h5></a>
+                <h5 class="card-title">${movie.title}</h5>
                 <p class="card-text">Year: ${movie.year}<br>
                 Director: ${movie.director}<br>
                 Duration: ${movie.duration}<br>
