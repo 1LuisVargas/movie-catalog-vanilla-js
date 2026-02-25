@@ -160,4 +160,4 @@ node index.js
 
 **Luis Vargas**
 - GitHub: [@1LuisVargas](https://github.com/1LuisVargas)
-- LinkedIn: [1LuisVargas](https://www.linkedin.com/in/1luisvargas/)
+- LinkedIn: [@1LuisVargas](https://www.linkedin.com/in/1luisvargas/)
