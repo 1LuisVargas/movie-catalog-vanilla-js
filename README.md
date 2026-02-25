@@ -105,13 +105,13 @@ cp .env.example .env
 Open `.env` and configure as needed:
 
 ```env
-PORT=3000
+URL=Mongo_DB_URL
 ```
 
 Start the backend server:
 
 ```bash
-node index.js
+npm start
 ```
 
 The API will be available at `http://localhost:3000`.
@@ -126,6 +126,7 @@ Open a new terminal tab/window:
 cd front
 npm install
 npm run build
+npm start
 ```
 
 Then simply open `front/index.html` in your browser. Make sure the backend is running so the frontend can fetch and update movie data.
