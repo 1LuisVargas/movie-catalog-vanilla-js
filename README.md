@@ -152,7 +152,7 @@ node index.js
 | Method | Endpoint        | Description              |
 |--------|-----------------|--------------------------|
 | GET    | `/movies`       | Get all movies           |
-| POST   | `/movies`       | Get a movie by ID        |
+| POST   | `/movies`       | Add a new movie to the DB|
 
 ---
 
